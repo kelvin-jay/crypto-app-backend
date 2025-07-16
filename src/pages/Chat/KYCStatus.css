@@ -1,0 +1,134 @@
+.kyc-status-card.advanced {
+  max-width: 480px;
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem 2rem 2rem;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  transition: box-shadow 0.2s;
+  position: relative;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: none;}
+}
+
+.kyc-status-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7em;
+}
+
+.kyc-status-label {
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.kyc-status-desc {
+  font-size: 1.08em;
+  color: #555;
+  margin-bottom: 1.3em;
+}
+
+.kyc-status-details > div {
+  margin-bottom: 0.5em;
+  font-size: 1.07em;
+}
+
+.blurred {
+  filter: blur(4px);
+  user-select: none;
+  background: #f1f1f1;
+  border-radius: 4px;
+  padding: 0 0.5em;
+  letter-spacing: 0.2em;
+}
+
+.kyc-status-docs {
+  margin: 1.2em 0 0.7em 0;
+}
+.kyc-status-docs > div {
+  margin-bottom: 0.7em;
+  display: flex;
+  align-items: center;
+  font-size: 1.07em;
+}
+.kyc-doc-btn {
+  margin-left: 1em;
+  background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.4em 1.1em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px 0 rgba(0,123,255,0.08);
+}
+.kyc-doc-btn:hover {
+  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+}
+
+.kyc-doc-missing {
+  color: #aaa;
+  margin-left: 1em;
+  font-style: italic;
+}
+
+.kyc-status-message {
+  font-size: 1.08em;
+  margin-bottom: 0.5em;
+}
+
+.kyc-status-actions {
+  margin-top: 1.5em;
+  display: flex;
+  gap: 0.7em;
+}
+
+.kyc-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 1.6em;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(0,123,255,0.08);
+  transition: background 0.18s, box-shadow 0.18s;
+}
+.kyc-btn:hover {
+  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+  box-shadow: 0 4px 16px 0 rgba(0,123,255,0.13);
+}
+.kyc-btn.outline {
+  background: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  box-shadow: none;
+}
+.kyc-btn.outline:hover {
+  background: #f0f8ff;
+  color: #0056b3;
+  border-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .kyc-status-card.advanced {
+    padding: 1.2rem 0.7rem 1.5rem 0.7rem;
+    max-width: 98vw;
+  }
+  .kyc-status-header {
+    font-size: 1em;
+  }
+}

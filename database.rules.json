@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "support_chat": {
+      ".read": true,
+      ".write": true
+    },
+    "users": {
+      ".read": true,       // 👈 Allow public reads for username/email availability check
+      ".write": "auth != null" // Only allow signed-in users to write to users
+    },
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}

@@ -1,0 +1,233 @@
+.main-contenter-5 {
+  padding: 48px 12px 48px 12px;
+  background: linear-gradient(135deg, #070e20 60%, #191970 100%);
+}
+
+.table-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #23234a22;
+  padding: 36px 18px 32px 18px;
+}
+
+.table-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ffc300;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+.table-container p {
+  font-size: 1.15rem;
+  margin-bottom: 36px;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 0;
+  padding: 0 12px;
+}
+
+.instrument-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin: 32px 0 24px 0;
+  background: transparent;
+}
+
+.instrument-table th, .instrument-table td {
+  padding: 14px 18px;
+  text-align: left;
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.instrument-table th {
+  background: rgba(25,25,112,0.8);
+  color: #ffc300;
+  font-weight: 700;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid #ffc30033;
+}
+
+.instrument-row {
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #23234a22;
+  transition: transform 0.18s, box-shadow 0.18s;
+  background: rgba(255,255,255,0.05);
+}
+
+.instrument-row:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 32px #ffc30033;
+  background: rgba(255,255,255,0.12);
+}
+
+.instrument-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.instrument-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #23234a33;
+}
+
+.instrument-name {
+  font-weight: bold;
+  color: #ffc300;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.instrument-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffc300;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+  margin-left: 4px;
+}
+
+.instrument-link:hover {
+  color: #191970;
+}
+
+.instrument-category {
+  margin-top: 48px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 14px;
+  padding: 28px 18px 18px 18px;
+  box-shadow: 0 2px 12px #23234a11;
+}
+
+.instrument-category h2 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  color: #ffc300;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.instrument-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+}
+
+.instrument-category li {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.instrument-category li strong {
+  color: #ffc300;
+  font-weight: 600;
+}
+
+.instrument-category li span {
+  color: #fff;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.button-container {
+  margin-top: 24px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.btn, .btn-1 {
+  background: linear-gradient(90deg, #ffc300 60%, #ff6f00 100%);
+  color: #23234a;
+  font-weight: 700;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #ffc30033;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-1 {
+  background: #23234a;
+  color: #ffc300;
+}
+
+.btn:hover, .btn-1:hover {
+  background: #ffc300;
+  color: #23234a;
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .table-container {
+    padding: 18px 2vw 18px 2vw;
+  }
+  .instrument-table th, .instrument-table td {
+    padding: 10px 8px;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    padding: 12px 0;
+  }
+  .instrument-table th, .instrument-table td {
+    padding: 8px 4px;
+    font-size: 0.95rem;
+  }
+  .instrument-category ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .button-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-contenter-5 {
+    padding: 18px 2vw;
+  }
+  .table-container h2 {
+    font-size: 1.2rem;
+  }
+  .table-container p {
+    font-size: 1rem;
+    padding: 0 2vw;
+  }
+  .instrument-table th, .instrument-table td {
+    font-size: 0.92rem;
+    padding: 6px 2px;
+  }
+  .instrument-img {
+    width: 28px;
+    height: 28px;
+  }
+  .instrument-category {
+    padding: 14px 4px 10px 4px;
+  }
+}

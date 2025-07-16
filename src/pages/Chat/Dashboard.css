@@ -1,0 +1,655 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+  background: #f7f8fa;
+}
+
+.left-sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #23234a;
+  transition: left 0.3s, width 0.3s;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-sidebar.show-menu {
+  left: 0;
+}
+.sidebar-hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  cursor: pointer;
+  color: #ffc300;
+  font-size: 1.7rem;
+}
+.left-sidebar.collapsed .sidebar-hamburger {
+  display: flex;
+}
+.left-sidebar .sidebar-hamburger {
+  display: none;
+}
+
+
+.close-menu {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.profile-section {
+  padding: 24px 16px 16px 16px;
+  text-align: center;
+  border-bottom: 1px solid #35356b;
+}
+
+.profile-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  background: #ffc300;
+  color: #23234a;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.profile-section h2 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #70a071;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+.left-sidebar ul {
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0;
+}
+
+.left-sidebar ul li {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.left-sidebar ul li:hover {
+  background-color: #35356b;
+  cursor: pointer;
+}
+
+.left-sidebar ul li i {
+  margin-right: 12px;
+  color: #ffc300;
+}
+
+.left-sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+
+.left-sidebar ul li a:hover {
+  color: #ffc300;
+}
+
+.right-sidebar {
+  flex: 1;
+  padding: 32px 32px 32px 32px;
+  margin-left: 250px;
+  overflow-y: auto;
+  background: #fff;
+  min-width: 0;
+  transition: margin-left 0.3s;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.top-bar i {
+  font-size: 24px;
+  cursor: pointer;
+  color: #23234a;
+}
+
+.top-bar p {
+  font-size: 1.2rem;
+  color: #23234a;
+  font-weight: 600;
+  margin: 0;
+}
+
+.right-sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.alert {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 18px 24px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  font-size: 1.08rem;
+  border: none;
+}
+
+.alert h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.balance, .total-withdrawal {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  text-align: center;
+}
+.profit-return {
+  background-color: #ffc107;
+  color: #262626;
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  text-align: center;
+}
+.bonus {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  text-align: center;
+}
+.total-deposit {
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  text-align: center;
+}
+.deposit {
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  text-align: center;
+}
+.withdrawal {
+  background-color: #6b6b6b;
+  color: #fff;
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  text-align: center;
+}
+.subscription {
+  background-color: #262626;
+  color: #fff;
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  text-align: center;
+}
+
+.deposit-icon {
+  font-size: 35px;
+  margin-bottom: 6px;
+  color: #ffc300;
+}
+
+.notification, .trading-progress {
+  background-color: #343434;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.trading-progress {
+  background: #fffbe6;
+  color: #bfa100;
+  font-weight: 600;
+}
+
+.trading-progress i {
+  color: #ffc300;
+}
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.chart-section,
+.tradingview-widget-container {
+  width: 100%;
+  height: 500px;
+  overflow: visible;
+  margin-top: 24px;
+}
+/* Sidebar collapsed state */
+.left-sidebar.collapsed {
+  width: 70px;
+  min-width: 70px;
+  transition: width 0.3s;
+}
+.left-sidebar.collapsed .profile-section h2,
+.left-sidebar.collapsed ul li a {
+  display: flex;
+}
+.left-sidebar.collapsed .profile-section {
+  padding: 24px 0 16px 0;
+}
+.left-sidebar.collapsed ul li {
+  justify-content: center;
+  padding: 12px 0;
+}
+.right-sidebar.collapsed {
+  margin-left: 70px;
+  transition: margin-left 0.3s;
+}
+/* Advanced sidebar tooltip */
+.sidebar-menu-item {
+  position: relative;
+}
+
+.sidebar-tooltip-adv {
+  display: block;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  background: #23234a;
+  color: #fff;
+  padding: 7px 18px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px #0003;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.22s cubic-bezier(.4,2,.6,1), transform 0.22s cubic-bezier(.4,2,.6,1);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.left-sidebar.collapsed .sidebar-menu-item:hover .sidebar-tooltip-adv {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.left-sidebar.collapsed ul li {
+  position: relative;
+}
+/* Advanced sidebar tooltip */
+.sidebar-menu-item {
+  position: relative;
+}
+
+.sidebar-tooltip-adv {
+  display: block;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  background: #23234a;
+  color: #fff;
+  padding: 7px 18px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px #0003;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.22s cubic-bezier(.4,2,.6,1), transform 0.22s cubic-bezier(.4,2,.6,1);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.left-sidebar.collapsed .sidebar-menu-item:hover .sidebar-tooltip-adv {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.left-sidebar.collapsed ul li {
+  position: relative;
+}
+
+/* Overlay for mobile menu */
+.sidebar-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 9;
+  display: block;
+}
+
+/* Highlight active menu */
+.left-sidebar ul li.active, .left-sidebar ul li.active:hover {
+  background: #1a1a38;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
+}
+.right-sidebar::-webkit-scrollbar {
+  width: 1px;
+  background-color: transparent;
+}
+.right-sidebar::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+.right-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+.right-sidebar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Portfolio Summary */
+.portfolio-summary {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 24px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px #0001;
+}
+.portfolio-summary h3 {
+  margin-top: 0;
+  color: #23234a;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+.portfolio-chart {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.portfolio-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.portfolio-legend div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+.portfolio-legend span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+/* Recent Transactions */
+.recent-transactions {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 24px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px #0001;
+}
+.recent-transactions h3 {
+  margin-top: 0;
+  color: #23234a;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+.recent-transactions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.recent-transactions li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+}
+.recent-transactions li:last-child {
+  border-bottom: none;
+}
+.tx-type {
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #fff;
+}
+.tx-type.deposit { background: #28a745; }
+.tx-type.withdraw { background: #dc3545; }
+.tx-type.buy { background: #ffc300; color: #23234a; }
+.tx-date {
+  color: #888;
+  font-size: 0.93em;
+}
+
+/* Buy Bitcoin Section */
+.buy-bitcoin-section {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 8px;
+  padding: 24px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px #0001;
+}
+.buy-bitcoin-section h3 {
+  margin-top: 0;
+  color: #bfa100;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+.buy-btc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.buy-btc-form label {
+  font-weight: 500;
+  color: #23234a;
+  margin-bottom: 4px;
+}
+.buy-btc-form input {
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.buy-btc-btn {
+  background: #ffc300;
+  color: #23234a;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.buy-btc-btn:hover {
+  background: #ffd700;
+}
+.buy-btc-form select {
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.global-announcement {
+  background: #e6f4ea;
+  color: #007b55;
+  border-left: 6px solid #28a745;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(40,167,69,0.07);
+}
+
+/* Light/dark theme */
+body.dark-theme {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+body.dark-theme .dashboard-container {
+  background: #1e1e1e;
+}
+body.dark-theme .alert {
+  background: #2c2c2c;
+  color: #ffcccb;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .left-sidebar {
+    position: fixed;
+    width: 0;
+    left: -250px;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+    background: #23234a;
+    transition: left 0.3s, width 0.3s;
+  }
+  .left-sidebar.show-menu {
+    width: 250px;
+    left: 0;
+  }
+  .close-menu {
+    display: block;
+  }
+  .right-sidebar {
+    margin-left: 0;
+    padding: 18px 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .right-sidebar-content {
+    gap: 16px;
+    padding: 10px 0;
+  }
+  .column {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .right-sidebar {
+    padding: 10px 2vw;
+  }
+  .alert {
+    font-size: 0.97rem;
+    padding: 10px 8px;
+  }
+  .profile-section {
+    padding: 16px 8px 8px 8px;
+  }
+}

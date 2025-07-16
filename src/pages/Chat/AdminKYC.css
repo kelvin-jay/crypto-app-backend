@@ -1,0 +1,175 @@
+.kyc-admin-outer {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #f8fafd;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.07);
+  padding: 36px 24px 32px 24px;
+  color: #111;
+}
+.kyc-admin-title {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #111;
+  letter-spacing: -1px;
+}
+.kyc-admin-search {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 420px;
+  font-size: 1.08em;
+  transition: border 0.2s;
+  color: #111;
+  background: #f9fbff;
+}
+.kyc-admin-search:focus {
+  border: 1.5px solid #007bff;
+  outline: none;
+}
+.kyc-admin-loading,
+.kyc-admin-empty {
+  text-align: center;
+  color: #888;
+  font-size: 1.1em;
+  margin: 32px 0;
+}
+.kyc-admin-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s;
+  overflow: hidden;
+  border: 1.5px solid #e5e7eb;
+}
+.kyc-admin-card.expanded {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+  border: 1.5px solid #007bff;
+}
+.kyc-admin-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  cursor: pointer;
+  background: #f0f6ff;
+  font-size: 1.13em;
+  font-weight: 500;
+  color: #222;
+  border-bottom: 1px solid #e5e7eb;
+}
+.kyc-admin-name {
+  font-weight: 600;
+  color: #111;
+  margin-right: 12px;
+}
+.kyc-admin-email {
+  color: #007bff;
+  font-size: 0.97em;
+}
+.kyc-admin-status {
+  padding: 5px 16px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.kyc-admin-card-body {
+  padding: 22px 22px 18px 22px;
+  background: #f9fbff;
+}
+.kyc-admin-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  margin-bottom: 18px;
+  font-size: 1.04em;
+}
+.kyc-admin-fields > div {
+  min-width: 180px;
+}
+.kyc-admin-docs {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.kyc-admin-doc-img {
+  max-width: 140px;
+  max-height: 90px;
+  border-radius: 7px;
+  border: 1.5px solid #e5e7eb;
+  margin-top: 6px;
+  display: block;
+}
+.kyc-admin-actions {
+  margin-bottom: 14px;
+}
+.kyc-admin-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 22px;
+  font-size: 1em;
+  font-weight: 500;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  color: #fff;
+  background: #007bff;
+}
+.kyc-admin-btn.verify {
+  background: #28a745;
+}
+.kyc-admin-btn.reject {
+  background: #dc3545;
+}
+.kyc-admin-btn.note {
+  background: #007bff;
+  color: #fff;
+  padding: 7px 16px;
+  font-size: 0.98em;
+}
+.kyc-admin-btn:disabled {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+.kyc-admin-note {
+  margin-top: 10px;
+  font-size: 1.01em;
+}
+.kyc-admin-note-input {
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #e5e7eb;
+  margin-right: 8px;
+  font-size: 1em;
+  width: 220px;
+  background: #fff;
+  color: #111;
+}
+.kyc-admin-note-input:focus {
+  border: 1.5px solid #007bff;
+  outline: none;
+}
+@media (max-width: 700px) {
+  .kyc-admin-outer {
+    padding: 12px 2vw;
+  }
+  .kyc-admin-card-header,
+  .kyc-admin-card-body {
+    padding: 12px 6px;
+  }
+  .kyc-admin-fields {
+    gap: 10px 12px;
+  }
+  .kyc-admin-docs {
+    gap: 12px;
+  }
+}

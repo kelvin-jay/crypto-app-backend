@@ -1,0 +1,231 @@
+.upgrade-adv-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px 48px 16px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7fafd;
+  min-height: 100vh;
+}
+.upgrade-adv-header {
+  text-align: center;
+  margin-bottom: 36px;
+  position: relative;
+}
+.back-btns {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1.1em;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: color 0.2s;
+}
+.back-btns:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+.upgrade-adv-header h1 {
+  margin-bottom: 8px;
+  font-size: 2.2em;
+  color: #222;
+}
+.upgrade-adv-header p {
+  color: #555;
+  font-size: 1.13em;
+}
+.adv-plan-cards {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.adv-plan-card {
+  flex: 1 1 260px;
+  min-width: 260px;
+  max-width: 320px;
+  border-radius: 18px;
+  padding: 32px 22px 22px 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  border: 2px solid transparent;
+  transition: border 0.25s, box-shadow 0.25s, transform 0.18s;
+  position: relative;
+  background-size: 200% 200%;
+}
+.adv-plan-card:hover {
+  border: 2px solid #007bff;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,123,255,0.13);
+}
+.adv-plan-card.selected {
+  border: 2.5px solid #007bff;
+  box-shadow: 0 8px 32px rgba(0,123,255,0.18);
+  transform: scale(1.04);
+  z-index: 2;
+}
+@keyframes cardPop {
+  0% { transform: scale(1); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1.04); }
+}
+.adv-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.adv-plan-badge {
+  font-size: 0.85em;
+  padding: 3px 12px;
+  border-radius: 10px;
+  margin-left: 8px;
+  color: #fff;
+  font-weight: 500;
+}
+.badge-current { background: #6c757d; }
+.badge-popular { background: #007bff; }
+.badge-bestvalue { background: #28a745; }
+.adv-plan-price {
+  font-size: 2.1em;
+  color: #222;
+  margin: 20px 0 14px 0;
+  font-weight: bold;
+}
+.adv-plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.adv-plan-features li {
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 1.08em;
+  display: flex;
+  align-items: center;
+}
+.adv-plan-features li span {
+  color: #28a745;
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+.adv-upgrade-btn {
+  background: linear-gradient(90deg, #007bff 60%, #00c6ff 100%);
+  color: #fff;
+  border: none;
+  padding: 18px 48px;
+  border-radius: 12px;
+  font-size: 1.25em;
+  cursor: pointer;
+  margin-bottom: 36px;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.09);
+  font-weight: 500;
+}
+.adv-upgrade-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.adv-upgrade-success {
+  background: #e6f4ea;
+  border-left: 6px solid #28a745;
+  padding: 22px 18px;
+  border-radius: 10px;
+  margin-bottom: 36px;
+  color: #155724;
+  text-align: center;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 12px rgba(40,167,69,0.07);
+  animation: popIn 0.5s;
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.adv-upgrade-success svg {
+  margin-bottom: 10px;
+}
+.adv-upgrade-faq {
+  margin-top: 36px;
+  background: #fff;
+  border-radius: 10px;
+  color: #333;
+  padding: 24px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.adv-upgrade-faq h3 {
+  margin-bottom: 16px;
+  color: #007bff;
+}
+.adv-upgrade-faq details {
+  margin-bottom: 14px;
+  font-size: 1.05em;
+}
+.payment-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.payment-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px 24px 24px;
+  max-width: 420px;
+  width: 95vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  animation: popIn 0.4s;
+}
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #888;
+  cursor: pointer;
+}
+.payment-success-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  margin: 18px 0 0 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.payment-success-btn:hover {
+  background: #218838;
+}
+.payment-note {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 8px;
+}
+@media (max-width: 900px) {
+  .adv-plan-cards {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .adv-plan-card {
+    max-width: 100%;
+    width: 100%;
+  }
+}

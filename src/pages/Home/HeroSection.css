@@ -1,0 +1,274 @@
+.heros-section {
+  background-color: #111;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-top {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.trust-text {
+  color: #8ce95e;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.rotating-star {
+  width: 30px;
+  height: 30px;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-description {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.hero-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-btn.filled {
+  background-color: #facc6b;
+  color: #000;
+  border: none;
+}
+
+.hero-btn.outlined {
+  border: 2px solid #facc6b;
+  background-color: transparent;
+  color: #facc6b;
+}
+
+.hero-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Hero bottom */
+.hero-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.video-image {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 20px;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.play-button img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.play-button:hover img {
+  transform: scale(1.1);
+}
+
+/* Right side */
+.hero-right {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.info-text {
+  font-size: 16px;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.bullet-points {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.bullet-points ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullet-points li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat h2 {
+  font-size: 32px;
+  color: #facc6b;
+  margin-bottom: 4px;
+}
+
+.stat p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Modal Video */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.video-modal-content {
+  width: 90%;
+  max-width: 800px;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-modal-content iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 12px;
+}
+.spin-round {
+  animation: spin-round 2.5s linear infinite;
+  width: 80px;
+  height: 80px;
+}
+
+@keyframes spin-round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .hero-left,
+  .hero-right {
+    flex: 1;
+  }
+
+  .hero-right {
+    text-align: left;
+    padding-left: 40px;
+  }
+
+  .info-text {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .bullet-points {
+    justify-content: flex-start;
+  }
+
+  .stats {
+    justify-content: flex-start;
+  }
+}

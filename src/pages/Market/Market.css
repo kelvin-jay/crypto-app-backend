@@ -1,0 +1,130 @@
+.market-root {
+  display: flex;
+  gap: 32px;
+  padding: 32px 16px;
+  background: #f8fafd;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+.market-main {
+  flex: 2;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 32px 24px;
+  min-width: 340px;
+}
+.market-news {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 32px 24px;
+  max-width: 420px;
+  min-width: 280px;
+}
+.market-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #09005c;
+}
+.market-table-wrap {
+  overflow-x: auto;
+}
+.market-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+.market-table th, .market-table td {
+  padding: 12px 8px;
+  text-align: left;
+}
+.market-table th {
+  background: #f0f4fa;
+  font-weight: 700;
+  color: #222;
+  border-bottom: 2px solid #eaeaea;
+}
+.market-table tr {
+  transition: background 0.2s;
+}
+.market-table tr:hover {
+  background: #f6faff;
+}
+.market-symbol {
+  color: #888;
+  font-size: 13px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.news-item-adv {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  text-decoration: none;
+  background: #f8fafd;
+  border-radius: 12px;
+  padding: 16px 14px;
+  transition: box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #f0f4fa;
+  position: relative;
+}
+.news-item-adv:hover {
+  background: #e8f0fe;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+.news-thumb-adv {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #eee;
+  margin-top: 2px;
+}
+.news-title-adv {
+  font-weight: 600;
+  color: #09005c;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.news-meta-adv {
+  color: #888;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.news-tags {
+  margin-left: 8px;
+  display: flex;
+  gap: 4px;
+}
+.news-tag {
+  background: #e0e7ff;
+  color: #3b3b8f;
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-size: 12px;
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .market-root {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .market-main, .market-news {
+    max-width: 100%;
+    min-width: 0;
+  }
+}

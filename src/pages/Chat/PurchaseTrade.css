@@ -1,0 +1,214 @@
+.purchase-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ff 0%, #c2e9fb 100%);
+  /* background-image: url('https://images.unsplash.com/photo-1518544801345-7e9b1b8b8c5a?auto=format&fit=crop&w=1200&q=80'); */
+  background-size: cover;
+  background-blend-mode: lighten;
+  padding: 0;
+}
+.purchase-trade-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 36px 16px 48px 16px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: relative;
+}
+.back-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+.back-btn:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+.purchase-trade-container h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #222;
+  font-size: 2.2em;
+  letter-spacing: 1px;
+}
+.beautiful-card {
+  background: rgba(255,255,255,0.97);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 28px 22px 22px 22px;
+  margin: 0 auto 32px auto;
+  max-width: 480px;
+  transition: box-shadow 0.2s;
+}
+.purchase-form label {
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.coin-select, .payment-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.coin-icon, .pay-icon {
+  font-size: 1.5em;
+  margin-left: 4px;
+}
+.purchase-form input,
+.purchase-form select {
+  padding: 8px 10px;
+  border-radius: 7px;
+  border: 1.5px solid #e5e7eb;
+  font-size: 1em;
+  margin-top: 2px;
+}
+.live-price {
+  color: #007bff;
+  font-size: 1.05em;
+  margin-bottom: 4px;
+}
+.buy-btn {
+  background: linear-gradient(90deg, #007bff 60%, #00c6ff 100%);
+  color: #fff;
+  border: none;
+  padding: 14px 0;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.09);
+}
+.buy-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.buy-btn.processing {
+  opacity: 0.7;
+  pointer-events: none;
+}
+.purchase-success {
+  background: #e6f4ea;
+  border-left: 6px solid #28a745;
+  padding: 12px 10px;
+  border-radius: 8px;
+  margin-top: 16px;
+  color: #155724;
+  text-align: center;
+  animation: popIn 0.5s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.order-summary h2,
+.trade-history h2 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.order-summary li {
+  margin-bottom: 7px;
+  font-size: 1.08em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.trade-history {
+  max-width: 700px;
+}
+.trade-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.trade-history th, .trade-history td {
+  padding: 8px 6px;
+  color: #333;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+.trade-history th {
+  background: #f3f7fa;
+  color: #333;
+}
+.security-notice {
+  background: #fffbe6;
+  border-left: 5px solid #ffc107;
+  color: #856404;
+  font-size: 1.05em;
+  margin-top: 32px;
+  max-width: 700px;
+}
+.moonpay-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.moonpay-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px 24px 24px;
+  max-width: 420px;
+  width: 95vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  animation: popIn 0.4s;
+}
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #888;
+  cursor: pointer;
+}
+.moonpay-success-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  margin: 18px 0 0 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.moonpay-success-btn:hover {
+  background: #218838;
+}
+.moonpay-note {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 8px;
+}
+@media (max-width: 900px) {
+  .order-summary, .trade-history, .security-notice, .beautiful-card {
+    max-width: 98vw;
+  }
+  .purchase-form {
+    max-width: 98vw;
+  }
+}

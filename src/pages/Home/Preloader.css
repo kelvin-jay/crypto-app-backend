@@ -1,0 +1,29 @@
+.preloader {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #4cae4f;
+  position: relative;
+  box-shadow: 0 2px 12px #ace3ae;
+  background: transparent;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background: #4cae4f;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 8px #ace3ae;
+  transition: box-shadow 0.2s;
+}

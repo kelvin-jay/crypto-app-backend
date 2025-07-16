@@ -1,0 +1,353 @@
+.deposit-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #f8fafc 0%, #fffbe6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw 0;
+}
+
+.deposit-moonpay-adv {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  max-width: 520px;
+  width: 100%;
+  color: #23234a;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  position: relative;
+  padding: 0 32px 32px 32px;
+  margin: 0 auto;
+}
+
+.deposit-moonpay-adv::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  border-radius: 22px 22px 0 0;
+  background: linear-gradient(90deg, #ffc300, #ff6f00, #ffc300 80%);
+  background-size: 200% 100%;
+  animation: gradientMove 3s linear infinite;
+  z-index: 1;
+}
+@keyframes gradientMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+.deposit-brand-bar {
+  position: relative;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  background: linear-gradient(90deg, #ffc300, #ff6f00 80%);
+  border-radius: 20px 20px 0 0;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #23234a;
+  letter-spacing: 0.04em;
+  z-index: 2;
+  box-shadow: 0 2px 8px #ffc30022;
+  margin-bottom: 18px;
+  margin-left: -32px;
+  margin-right: -32px;
+}
+
+.deposit-brand-logo-img {
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  margin-right: 16px;
+  box-shadow: 0 2px 8px #ffc30022, 0 0 0 4px #fff;
+  background: #fff;
+  transition: box-shadow 0.2s, transform 0.2s;
+  object-fit: contain;
+}
+.deposit-brand-logo-img:hover {
+  box-shadow: 0 4px 16px #ffc30055, 0 0 0 4px #fff;
+  transform: scale(1.07);
+}
+.deposit-brand-back {
+  color: #23234a;
+  font-size: 1.05em;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: text-decoration 0.2s;
+}
+.deposit-brand-back:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.dark-toggle-btn {
+  margin-left: auto;
+  margin-right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #23234a;
+  transition: color 0.2s;
+}
+.deposit-bg.dark .dark-toggle-btn,
+body.dark .dark-toggle-btn {
+  color: #ffc300;
+}
+
+.deposit-moonpay-adv h2 {
+  color: #23234a;
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin-top: 18px;
+}
+
+.deposit-moonpay-adv p {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1.09rem;
+}
+
+.deposit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.deposit-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.deposit-select, .deposit-input {
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 9px;
+  font-size: 1.13rem;
+  background: rgba(255,255,255,0.7);
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 6px #ffc30022;
+}
+
+.deposit-select:focus, .deposit-input:focus {
+  border-color: #ffc300;
+  outline: none;
+  box-shadow: 0 0 0 2px #ffe06655;
+}
+
+.deposit-preview-card {
+  background: rgba(255, 243, 179, 0.85);
+  border: 1.5px solid #ffc300;
+  border-radius: 13px;
+  padding: 20px 18px;
+  margin-bottom: 20px;
+  margin-top: 12px;
+  box-shadow: 0 2px 12px #ffc30022;
+  font-size: 1.07rem;
+}
+
+.deposit-preview-card h4 {
+  margin: 0 0 12px 0;
+  color: #bfa100;
+  font-size: 1.13rem;
+  font-weight: 700;
+}
+
+.deposit-preview-card .mono {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1.04em;
+  color: #23234a;
+  background: #fffbe6;
+  padding: 2px 7px;
+  border-radius: 5px;
+  word-break: break-all;
+}
+
+.deposit-iframe {
+  border-radius: 18px;
+  min-height: 600px;
+  box-shadow: 0 2px 18px #23234a18;
+  border: none;
+  margin-top: 22px;
+  background: #fff;
+}
+
+.deposit-watermark {
+  position: absolute;
+  bottom: 18px;
+  right: 24px;
+  font-size: 3.5rem;
+  color: #ffc30033;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+.coin-select-group {
+  position: relative;
+}
+
+.coin-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coin-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 1px 4px #23234a11;
+  display: inline-block;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .deposit-bg {
+    padding: 2vw 0;
+  }
+  .deposit-moonpay-adv {
+    margin: 3vw 2vw 7vw 2vw;
+    padding: 0 8px 18px 8px;
+    max-width: 98vw;
+  }
+  .deposit-brand-bar {
+    padding-left: 8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    height: 48px;
+    font-size: 1.05rem;
+  }
+  .deposit-brand-logo-img {
+    height: 32px;
+    width: 32px;
+    margin-right: 8px;
+  }
+  .deposit-iframe {
+    min-height: 400px;
+  }
+}
+
+/* DARK MODE */
+body.dark,
+.deposit-bg.dark {
+  background: linear-gradient(135deg, #181c24 0%, #23234a 100%) !important;
+}
+
+body.dark .deposit-moonpay-adv,
+.deposit-bg.dark .deposit-moonpay-adv {
+  background: rgba(30, 34, 54, 0.96);
+  color: #f8fafc;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark .deposit-moonpay-adv::before,
+.deposit-bg.dark .deposit-moonpay-adv::before {
+  background: linear-gradient(90deg, #ffc300, #ff6f00, #ffc300 80%);
+}
+
+body.dark .deposit-brand-bar,
+.deposit-bg.dark .deposit-brand-bar {
+  background: linear-gradient(90deg, #23234a, #181c24 80%);
+  color: #ffc300;
+  box-shadow: 0 2px 8px #23234a55;
+}
+
+body.dark .deposit-brand-back,
+.deposit-bg.dark .deposit-brand-back {
+  color: #ffc300;
+}
+
+body.dark .deposit-form,
+.deposit-bg.dark .deposit-form {
+  color: #f8fafc;
+}
+
+body.dark .deposit-select,
+body.dark .deposit-input,
+.deposit-bg.dark .deposit-select,
+.deposit-bg.dark .deposit-input {
+  background: #23234a;
+  color: #f8fafc;
+  border: 1.5px solid #23234a;
+}
+
+body.dark .deposit-select:focus,
+body.dark .deposit-input:focus,
+.deposit-bg.dark .deposit-select:focus,
+.deposit-bg.dark .deposit-input:focus {
+  border-color: #ffc300;
+  box-shadow: 0 0 0 2px #ffc30055;
+}
+
+body.dark .deposit-preview-card,
+.deposit-bg.dark .deposit-preview-card {
+  background: rgba(40, 40, 60, 0.92);
+  border: 1.5px solid #ffc300;
+  color: #ffc300;
+}
+
+body.dark .deposit-preview-card .mono,
+.deposit-bg.dark .deposit-preview-card .mono {
+  background: #23234a;
+  color: #ffc300;
+}
+
+body.dark .deposit-iframe,
+.deposit-bg.dark .deposit-iframe {
+  background: #181c24;
+}
+
+body.dark .deposit-watermark,
+.deposit-bg.dark .deposit-watermark {
+  color: #ffc30022;
+}
+
+body.dark .coin-logo,
+.deposit-bg.dark .coin-logo {
+  background: #23234a;
+  border: 1px solid #ffc30044;
+}
+
+body.dark .deposit-brand-logo-img,
+.deposit-bg.dark .deposit-brand-logo-img {
+  box-shadow: 0 2px 8px #ffc30022, 0 0 0 4px #23234a;
+  background: #23234a;
+}
+
+/* Improve text visibility in dark mode */
+body.dark .deposit-moonpay-adv h2,
+.deposit-bg.dark .deposit-moonpay-adv h2,
+body.dark .deposit-moonpay-adv p,
+.deposit-bg.dark .deposit-moonpay-adv p,
+body.dark .deposit-moonpay-adv label,
+.deposit-bg.dark .deposit-moonpay-adv label,
+body.dark .deposit-moonpay-adv strong,
+.deposit-bg.dark .deposit-moonpay-adv strong {
+  color: #ffe066 !important;
+}
+
+body.dark .deposit-moonpay-adv input,
+.deposit-bg.dark .deposit-moonpay-adv input,
+body.dark .deposit-moonpay-adv select,
+.deposit-bg.dark .deposit-moonpay-adv select {
+  color: #fff !important;
+}
+
+body.dark .deposit-moonpay-adv {
+  color: #ffe066;
+}
