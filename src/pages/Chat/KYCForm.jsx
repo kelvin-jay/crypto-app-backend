@@ -16,28 +16,37 @@ const KYCForm = ({ email, navigate, onSubmitted }) => {
   const [verified, setVerified] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const handleFile = (setter) => (e) => {
+   const handleFile = (setter) => (e) => {
     if (e.target.files && e.target.files[0]) {
       setter(e.target.files[0]);
     }
   };
 
-  const getSetup = async () => {
-    const res = await fetch(`http://localhost:4243/2fa/setup?email=${email}`);
-    const data = await res.json();
-    setQr(data.qr);
-    setSecret(data.secret);
+   const getSetup = async () => {
+    try {
+      const res = await fetch(`http://localhost:5000/2fa/setup?email=${email}`);
+      const data = await res.json();
+      setQr(data.qr);
+      setSecret(data.secret);
+    } catch (err) {
+      alert('Failed to generate 2FA setup. Make sure the backend is running.');
+    }
   };
 
   const verifyToken = async () => {
-    const res = await fetch('http://localhost:4243/2fa/verify', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ token, email }),
-});
-    const data = await res.json();
-    setVerified(data.verified);
+    try {
+      const res = await fetch('http://localhost:5000/2fa/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, email }),
+      });
+      const data = await res.json();
+      setVerified(data.verified);
+    } catch (err) {
+      alert('2FA verification failed. Check your backend connection.');
+    }
   };
+
 
   const handleKYC = async (e) => {
     e.preventDefault();
@@ -46,6 +55,7 @@ const KYCForm = ({ email, navigate, onSubmitted }) => {
       return;
     }
     setSubmitting(true);
+
     const formData = new FormData();
     formData.append('fullName', fullName);
     formData.append('email', email);
@@ -57,7 +67,7 @@ const KYCForm = ({ email, navigate, onSubmitted }) => {
     if (ssc) formData.append('ssc', ssc);
 
     try {
-      const res = await fetch('http://localhost:4243/kyc/submit', {
+      const res = await fetch('http://localhost:5000/kyc/submit', {
         method: 'POST',
         body: formData,
       });
@@ -66,7 +76,7 @@ const KYCForm = ({ email, navigate, onSubmitted }) => {
         alert('KYC and 2FA setup complete!');
         if (onSubmitted) onSubmitted();
       } else {
-        alert('KYC submission failed.');
+        alert('KYC submission failed: ' + (data.message || 'Unknown error'));
       }
     } catch (err) {
       alert('Error submitting KYC: ' + err.message);

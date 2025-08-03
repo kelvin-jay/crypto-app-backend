@@ -19,7 +19,7 @@ const AdminKYC = () => {
 
   // Fetch all KYC submissions
   const fetchKYCList = async () => {
-    const res = await fetch("http://localhost:4243/admin/kyc/all", {
+    const res = await fetch("http://localhost:5000/admin/kyc/all", {
       headers: {
         "x-admin-key": ADMIN_API_KEY,
       },
@@ -41,7 +41,7 @@ const AdminKYC = () => {
       status === "rejected"
         ? prompt("Enter rejection reason:")
         : "Your KYC has been verified!";
-    await fetch("http://localhost:4243/admin/kyc/verify", {
+    await fetch("http://localhost:5000/admin/kyc/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const AdminKYC = () => {
 
   // Save admin note
   const handleNoteSave = async (email) => {
-    await fetch("http://localhost:4243/admin/kyc/note", {
+    await fetch("http://localhost:5000/admin/kyc/note", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const AdminKYC = () => {
         "Are you sure you want to permanently delete this KYC submission?"
       )
     ) {
-      await fetch("http://localhost:4243/admin/kyc/delete", {
+      await fetch("http://localhost:5000/admin/kyc/delete", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,7 +163,7 @@ const AdminKYC = () => {
                     {kyc.driversLicenseFile ? (
                       /\.(jpg|jpeg|png|gif)$/i.test(kyc.driversLicenseFile) ? (
                         <img
-                          src={`http://localhost:4243/${kyc.driversLicenseFile.replace(
+                          src={`http://localhost:5000/${kyc.driversLicenseFile.replace(
                             /\\/g,
                             "/"
                           )}`}
@@ -172,7 +172,7 @@ const AdminKYC = () => {
                         />
                       ) : (
                         <a
-                          href={`http://localhost:4243/${kyc.driversLicenseFile.replace(
+                          href={`http://localhost:5000/${kyc.driversLicenseFile.replace(
                             /\\/g,
                             "/"
                           )}`}
@@ -191,7 +191,7 @@ const AdminKYC = () => {
                     {kyc.sscFile ? (
                       /\.(jpg|jpeg|png|gif)$/i.test(kyc.sscFile) ? (
                         <img
-                          src={`http://localhost:4243/${kyc.sscFile.replace(
+                          src={`http://localhost:5000/${kyc.sscFile.replace(
                             /\\/g,
                             "/"
                           )}`}
@@ -200,7 +200,7 @@ const AdminKYC = () => {
                         />
                       ) : (
                         <a
-                          href={`http://localhost:4243/${kyc.sscFile.replace(
+                          href={`http://localhost:5000/${kyc.sscFile.replace(
                             /\\/g,
                             "/"
                           )}`}

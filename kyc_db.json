@@ -12,5 +12,33 @@
     "kycMessage": "Your KYC has been verified!",
     "date": "2025-06-23T11:45:10.905Z",
     "adminNote": ""
+  },
+  "codybrat30@gmail.com": {
+    "fullName": "cody brat",
+    "email": "codybrat30@gmail.com",
+    "phone": "8328560998",
+    "dob": "1996-01-26",
+    "address": "otor gor warri ",
+    "ssn": "565377637",
+    "driversLicenseFile": "uploads\\3f918cf1d6b9a24284fc858c6400bad9",
+    "sscFile": "uploads\\c0b9e6dc76a229a08904b589d0c50842",
+    "kycStatus": "verified",
+    "kycMessage": "Your KYC has been verified!",
+    "date": "2025-07-16T13:24:30.830Z",
+    "adminNote": "good one"
+  },
+  "foxertrader47@gmail.com": {
+    "fullName": "foxer trade",
+    "email": "foxertrader47@gmail.com",
+    "phone": "8328560998",
+    "dob": "1187-02-25",
+    "address": "dhjsgsjzgajjkhaj",
+    "ssn": "256252761",
+    "driversLicenseFile": "uploads\\d4bac06edd211fbcc7b609f0531484b6",
+    "sscFile": "uploads\\52fc908119897442cce4138f640cae64",
+    "kycStatus": "rejected",
+    "kycMessage": "please provide more details and correct information",
+    "date": "2025-07-29T08:06:07.640Z",
+    "adminNote": "please provide more details"
   }
 }

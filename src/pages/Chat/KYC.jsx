@@ -21,7 +21,7 @@ const KYC = () => {
       return;
     }
     setChecking(true);
-    fetch(`http://localhost:4243/kyc/status/${encodeURIComponent(email)}`)
+    fetch(`http://localhost:5000/kyc/status/${encodeURIComponent(email)}`)
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         setKycData(data);
@@ -53,7 +53,7 @@ const KYC = () => {
       onSubmitted={() => {
         // After submission, re-fetch KYC status to show status card
         setChecking(true);
-        fetch(`http://localhost:4243/kyc/status/${encodeURIComponent(email)}`)
+        fetch(`http://localhost:5000/kyc/status/${encodeURIComponent(email)}`)
           .then(res => res.ok ? res.json() : null)
           .then(data => {
             setKycData(data);

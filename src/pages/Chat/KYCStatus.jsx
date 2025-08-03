@@ -39,7 +39,7 @@ const KYCStatus = ({ userEmail, onResubmit }) => {
       return;
     }
     setLoading(true);
-    fetch(`http://localhost:4243/kyc/status/${encodeURIComponent(email)}`)
+    fetch(`http://localhost:5000/kyc/status/${encodeURIComponent(email)}`)
       .then(res => {
         if (!res.ok) throw new Error('No KYC found');
         return res.json();
@@ -119,7 +119,7 @@ const KYCStatus = ({ userEmail, onResubmit }) => {
               className="kyc-doc-btn"
               onClick={() =>
                 handleDownload(
-                  `http://localhost:4243/${kyc.driversLicenseFile.replace(/\\/g, "/")}`
+                  `http://localhost:5000/${kyc.driversLicenseFile.replace(/\\/g, "/")}`
                 )
               }
             >
@@ -138,7 +138,7 @@ const KYCStatus = ({ userEmail, onResubmit }) => {
               className="kyc-doc-btn"
               onClick={() =>
                 handleDownload(
-                  `http://localhost:4243/${kyc.sscFile.replace(/\\/g, "/")}`
+                  `http://localhost:5000/${kyc.sscFile.replace(/\\/g, "/")}`
                 )
               }
             >
